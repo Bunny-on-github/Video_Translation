@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Translation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload a Video File</h2>
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" name="video" id="video-upload" accept="video/*" required>
+            <button type="submit">Upload and Process</button>
+        </form>
+
+        <!-- Video Preview Section -->
+        <h3>Video Preview</h3>
+        <video id="video-preview" controls style="display: none; width: 100%;"></video>
+
+        <!-- Status Display -->
+        <h3>Status</h3>
+        <p id="status"></p>
+
+        <!-- Transcription and Translation Display -->
+        <h3>Transcription (English)</h3>
+        <p id="transcription"></p>
+
+        <h3>Translation (Hindi)</h3>
+        <p id="translation"></p>
+
+        <!-- Audio File Download Links -->
+        <h3>Extracted Audio</h3>
+        <a id="extracted-audio" download></a>
+
+        <h3>Translated Audio</h3>
+        <a id="translated-audio" download></a>
+
+        <!-- Processed Video Download Link -->
+        <h3>Download Processed Video</h3>
+        <a id="output-video" download></a>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
